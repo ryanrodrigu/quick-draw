@@ -1,0 +1,20 @@
+body{
+    background-color:light green ;
+}
+
+#score{
+    float: left;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#timer{
+    float: right;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#sketch_drawn{
+    color: red;
+    font-size: 20px;
+}
