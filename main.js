@@ -57,3 +57,24 @@ function check_sketch()
         updateCanvas();
     }
 }
+
+function preload() {
+    classifier = ml5.imageClassifier('DoodleNet');
+}
+
+
+function classifyCanvas() {
+    classifier.classify(canvas, gotResult);
+}
+
+
+function gotResult(error, results) {
+    if(error) {
+        console.error(error);
+    }
+    console.log(results);
+    drawn_sketch = reults[0].label;
+    document.getElementById('label').innerHTML = 'Your Sketch: ' + drawn_sketch;
+
+    document.getElementById('confidence').innerHTML = 'confidence: ' + Math.round(results[0].confidence * 100) + '%';
+}
